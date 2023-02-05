@@ -1,0 +1,22 @@
+  {
+      "width": 700,
+      "projection": "geoEckert3",
+      "fillOpacity": 1,
+      "stroke": "white",
+      "strokeWidth": 0.5,
+      "strokeOpacity": 1,
+      "fill": {
+        "type": "choro",
+        "values": "gdppc",
+        "nbreaks": 5,
+        "method": "quantile",
+        "colors": "RdYlBu",
+        "leg_round": -2.0,
+        "leg_title": "GDP per in dollars",
+        "leg_x": 100,
+        "leg_y": 200
+      },
+      "merge" :  "id"
+  }
+  
+

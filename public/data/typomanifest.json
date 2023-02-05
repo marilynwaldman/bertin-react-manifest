@@ -1,0 +1,35 @@
+{
+   "params": {
+     "width": 350,
+     "projection": null
+   },
+   "layers": [
+     {
+       "type": "layer",
+       "geojson": null,
+       "fill": {
+         "type": "typo",
+         "values": "region",
+         "colors": "Set3"
+       },
+       "stroke": "white",
+       "fillOpacity": 0.5,
+       "strokeWidth": 0.1
+     },
+     { "type": "outline", "fill": null },
+     {
+       "type": "header",
+       "text": "World Atlas",
+       "fill": "#65bcdb",
+       "fontSize": 20,
+       "anchor": "middle"
+     },
+     {
+      "type": "footer",
+      "text": "IXMAPS",
+      "fill":  "#65bcdb",
+      "fontSize": 15,
+      "anchor": "middle"
+    }
+     ]
+ }

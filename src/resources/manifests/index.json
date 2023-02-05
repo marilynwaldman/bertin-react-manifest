@@ -1,0 +1,87 @@
+{
+    "files":[
+        "typo.json",
+        "simplelayer.json",
+        "tile.json",
+        "choro.json",
+        "bubble.json"
+    ],
+    "manifests" : [
+        {   "id": "choro",
+            "file": "choro.json",
+            "projection": "geoEckert3",
+            "dependencies" :  {
+                "world" :  {             
+                      "file" : "world.json",
+                      "index" : "ISO3"
+                },
+                "population" :  {
+                    "file": "population.json",
+                    "index" : "id"
+                }
+            }
+
+        },
+        {   "id": "typo",
+            "file": "choro.json",
+            "projection": "geoEckert3",
+            "dependencies" :  {
+                "worldfile" : "world.json",
+                "world" :  {             
+                      "file" : "world.json",
+                      "index" : "ISO3"
+                },
+                "population" :  {
+                    "file": "population.json",
+                    "index" : "id"
+                }
+            }
+        },    
+        {   "id": "simplelayer",
+            "file": "simplelayer.json",
+            "projection": "geoEckert3",
+            "dependencies" :  {
+                "world" :  {             
+                      "file" : "world.json",
+                      "index" : "ISO3"
+                },
+                "population" :  {
+                    "file": "population.json",
+                    "index" : "id"
+                }
+            }
+
+        },
+        {   "id": "tile",
+            "file": "tile.json",
+            "projection": "geoEckert3",
+            "dependencies" :  {
+                "world" :  {             
+                      "file" : "world.json",
+                      "index" : "ISO3"
+                },
+                "population" :  {
+                    "file": "population.json",
+                    "index" : "id"
+                }
+            }
+
+        },
+        {   "id": "bubble",
+            "file": "bubble.json",
+            "projection": "geoEckert3",
+            "dependencies" :  {
+                "world" :  {             
+                      "file" : "world.json",
+                      "index" : "ISO3"
+                },
+                "population" :  {
+                    "file": "population.json",
+                    "index" : "id"
+                }
+            }
+
+        }
+       
+    ]
+}

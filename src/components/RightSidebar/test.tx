@@ -1,0 +1,54 @@
+Here's a commented example of how to update an object value in a Recoil atom. Just make sure not to mutate any objects while updating it (the same is true for any React state).
+
+body { font-family: sans-serif; }
+button, pre { font-size: 1rem; }
+pre { font-family: monospace; }
+<div id="root"></div><script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script><script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script><script src="https://unpkg.com/recoil@0.7.2/umd/recoil.min.js"></script><script src="https://unpkg.com/@babel/standalone@7.17.11/babel.min.js"></script>
+<script type="text/babel" data-type="module" data-presets="env,react">
+
+// import * as ReactDOM from 'react-dom/client';
+// import {atom, RecoilRoot, useRecoilState} from 'recoil';
+
+// This Stack Overflow snippet demo uses UMD modules instead of the above import statments
+const {atom, RecoilRoot, useRecoilState} = Recoil;
+
+// It won't make any difference whether you define this atom
+// here in this module or define it in another module and import it:
+const livePolyAtom = atom({
+  key: 'livePolygon',
+  default: {
+    radii: [0, 0],
+    coordinates: [0, 0],
+    tilt: [0],
+  },
+});
+
+function App () {
+  const [livePoly, setLivePoly] = useRecoilState(livePolyAtom);
+
+  const updateRadiiValue = () => {
+    // Make sure not to mutate any objects when returning the new object state:
+    setLivePoly(lp => {
+      const radii = [...lp.radii];
+      radii[1] = 5;
+      return {...lp, radii};
+    });
+  };
+
+  return (
+    <div>
+      <button onClick={updateRadiiValue}>Update radii value</button>
+      <pre><code>{JSON.stringify(livePoly, null, 2)}</code></pre>
+    </div>
+  );
+}
+
+const reactRoot = ReactDOM.createRoot(document.getElementById('root'));
+
+reactRoot.render(
+  <RecoilRoot>
+    <App />
+  </RecoilRoot>
+);
+
+</script>

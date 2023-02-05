@@ -1,0 +1,6 @@
+﻿image,name,url
+simple.png,Simple Layer,./public/img/simple.png
+choro.png,Choropleth,./public/img/choro.png
+typo.png,Typo,./public/img/typo.png
+bubble.png ,Bubble,./img/bubble.png
+tile.png,Tile,./public/img/tile.png
