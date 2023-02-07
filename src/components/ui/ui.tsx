@@ -1,7 +1,7 @@
 import styled, {createGlobalStyle} from 'styled-components'
 
 export const Sidebar = styled.div`
-    width: 200px;
+    width: 350px;
     height: 100%;
     background-color: 'white';
     padding: 20px;

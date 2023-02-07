@@ -3,26 +3,46 @@
     "layers": [
       {
         "type": "layer",
-        "geojson": "xxx",
+        "geojson": "world",
+        "fillOpacity": 0.35,
+        "fill": "white",
+        "stroke": "none",
+        "leg_text": "Countries"
+      },
+      {
+        "type": "bubble",
+        "geojson": "worlddata",
+        "values": "pop",
+        "k": 65,
+        "leg_x": 100,
+        "leg_y": 300,
+        "leg_divisor": 1000000,
+        "leg_title": "Population (million inh.)",
+       
         "fill": {
-          "type": "choro",
-          "values": "gdppc",
-          "nbreaks": 5,
-          "method": "quantile",
-          "colors": "RdYlBu",
-          "leg_round": -2.0,
-          "leg_title": "GDP per in dollars",
+          "type": "typo",
+          "values": "region",
+          "leg_title": "The Continents",
           "leg_x": 100,
-          "leg_y": 200
+          "leg_y": 100
         },
-        "tooltip": ["$name", "$gdppc"]
+        
+        "tooltip": {
+          "fields": ["$name", "", "Continent", "$region", "Population", "$pop"],
+          "fontSize": [25, 10, 14, 12, 14, 12],
+          "fontWeight": ["bold", "normal", "bold", "normal", "bold", "normal"]
+
+        }
+      
       },
       { "type": "graticule" },
       { "type": "outline" },
-      { "type": "header",
-        "text": "Typology: World GDP",
-        "fill": "#65bcdb",
-        "fontSize": 25,
+      {
+        "type": "header",
+        "text": "Bubble Map - World Population",
+        "background": "white",
+        "fill": "black",
+        "fontSize": 30,
         "anchor": "middle"
       },
       {

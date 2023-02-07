@@ -22,10 +22,11 @@ const CanvasContainer = styled.div`
 
 export const D3Map = () => {
 
-  const {csv, setCSV} = useContext(MapContext) as any
-  const {worldGeoJSON, setworldGeoJSON} = useContext(MapContext) as any
-  const {manifest, setManifest} = useContext(MapContext) as any
-  const {style, setStyle} = useContext(MapContext) as any
+  //const {csv, setCSV} = useContext(MapContext) as any
+  //const {worldGeoJSON, setworldGeoJSON} = useContext(MapContext) as any
+  //const {manifest, setManifest} = useContext(MapContext) as any
+  //const {style, setStyle} = useContext(MapContext) as any
+  const {manifests, setManifests} = useContext(MapContext) as any
 
   const projections = {
     "geoEckert3" : d33.geoEckert3()
@@ -44,24 +45,28 @@ export const D3Map = () => {
     ],
   }
   var manifestCopy = _.cloneDeep(basicMap);
-  if(worldGeoJSON !=null && csv !=null && manifest !=null && style !=null){
+  //if(worldGeoJSON !=null && csv !=null && manifests !=null && manifest !=null && style !=null){
+  if( manifests !=null ){
     //manifestCopy  = JSON.parse(JSON.stringify(manifest)) as any
-    manifestCopy = _.cloneDeep(manifest);
-    manifestCopy.layers[0].fill.values = String(style.fill.values)
-    manifestCopy.layers[0].fill.colors = String(style.fill.colors)
+    //console.log("d3map manifest typo: ", manifests.typo)
+    //manifestCopy = _.cloneDeep(manifest);
+    //manifestCopy.layers[0].fill.values = String(style.fill.values)
+    //manifestCopy.layers[0].fill.colors = String(style.fill.colors)
     
     
-    const projection = manifest.params.projection
-    manifestCopy.params.projection = projections[projection]
+    //const projection = manifest.params.projection
+    //manifestCopy.params.projection = projections[projection]
     
-    var geojson = require('../../resources/geojson/' + manifest.layers[0].geojson + '.json')
+    //var geojson = require('../../resources/geojson/' + manifest.layers[0].geojson + '.json')
 
-    var xx = require('../../resources/geojson/world.json')
+    //var xx = require('../../resources/geojson/world.json')
 
-    var mergedJson = bertin.merge(geojson, "ISO3", csv, "id")
+    //var mergedJson = bertin.merge(geojson, "ISO3", csv, "id")
     //console.log("after merge  ", mergedJson)
     
-    manifestCopy.layers[0].geojson = mergedJson
+    //manifestCopy.layers[0].geojson = mergedJson
+
+    manifestCopy = manifests.bubble
   
     
   } 

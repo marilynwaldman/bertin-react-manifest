@@ -26,6 +26,14 @@
         "anchor": "middle"
       },
       {
+        "type": "header",
+        "text": "Typo Map",
+        "background": "white",
+        "fill": "black",
+        "fontSize": 30,
+        "anchor": "middle"
+      },
+      {
         "type": "footer",
         "text": "IX Water",
         "fill": "#65bcdb",

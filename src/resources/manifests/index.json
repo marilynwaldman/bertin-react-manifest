@@ -23,7 +23,7 @@
 
         },
         {   "id": "typo",
-            "file": "choro.json",
+            "file": "typo.json",
             "projection": "geoEckert3",
             "dependencies" :  {
                 "worldfile" : "world.json",
@@ -75,8 +75,8 @@
                       "file" : "world.json",
                       "index" : "ISO3"
                 },
-                "population" :  {
-                    "file": "population.json",
+                "population" : {
+                    "file": "worlddata.json",
                     "index" : "id"
                 }
             }

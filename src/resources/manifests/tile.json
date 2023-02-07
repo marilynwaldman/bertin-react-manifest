@@ -26,6 +26,14 @@
         "anchor": "middle"
       },
       {
+        "type": "header",
+        "text": "Tile Map",
+        "background": "white",
+        "fill": "lightblue",
+        "fontSize": 30,
+        "anchor": "center"
+      },
+      {
         "type": "footer",
         "text": "IX Water",
         "fill": "#65bcdb",

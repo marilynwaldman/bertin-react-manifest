@@ -22,8 +22,9 @@ export default function BertinList() {
     const listItems = bertinTypes.map((item: any, index: number) => 
          <ListItem key = {item.index} button onClick={() => console.log("clicked ", index)}>
             <ListItemAvatar >
-                <Avatar variant="square" style={{borderRadius: .5, height: '30px', width: '50px' }} alt={item.name} src={`./img/${item.image}`}>
+                <Avatar  style={{borderRadius: 0.00, height: '80px', width: '100px' }} alt={item.name} src={`./img/${item.image}`}>
                 </Avatar>    
+               
             </ListItemAvatar>
             <ListItemText>{item.name}</ListItemText>
          </ListItem>

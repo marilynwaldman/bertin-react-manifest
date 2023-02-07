@@ -13,23 +13,30 @@ const projections = {
     "geoEckert3" : d33.geoEckert3()
   }
 
-
+    
 
 export const getManifests = () => {
   
        var data : any= {};
        manifests.manifests.forEach(obj => {
-           console.log(obj)
            var manifest = require('../../resources/manifests/' + obj.file)
+           var csv = require('../../resources/data/' + obj.dependencies.population.file)
            manifest.params.projection = projections[obj.projection]
-           var csv = require('../../resources/data/population.json')
            var geojson = require('../../resources/geojson/' + obj.dependencies.world.file)
-           var mergedJson = bertin.merge(geojson, "ISO3", csv, "id")
+           if (obj.id != "bubble"){
+              var mergedJson = bertin.merge(geojson, "ISO3", csv, "id")
+              manifest.layers[0].geojson = mergedJson
+           } else {
+            manifest.layers[0].geojson = csv
+            manifest.layers[1].geojson = geojson
 
-           manifest.layers[0].geojson = mergedJson
-           data[obj.id] = data
+           }
+           
+
+
+           data[obj.id] = manifest
        })
-       console.log("getManifest data done: ", data)
+      
        return data
        
   

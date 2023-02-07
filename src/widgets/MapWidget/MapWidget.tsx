@@ -25,36 +25,22 @@ const Container = styled.div`
     `   
 
 type MapContext = {
-    worldGeoJSON: {}
-    setworldGeoJSON: React.Dispatch<React.SetStateAction<any>>
-    manifest: {}
-    setManifest: React.Dispatch<React.SetStateAction<any>>
+    
     manifests: {}
     setManifests: React.Dispatch<React.SetStateAction<any>>
     csv: []
     setCSV: React.Dispatch<React.SetStateAction<any>>
-    style: {}
-    setStyle: React.Dispatch<React.SetStateAction<any>>
-    csvFiles : csvFile[]
-    setcsvFiles: React.Dispatch<React.SetStateAction<csvFile>>
+    
     bertinTypes: []
     setbertinTypes: React.Dispatch<React.SetStateAction<any>>
   
   }
 
 export const MapContext = React.createContext<MapContext>({
-      worldGeoJSON: {},
-      setworldGeoJSON: () => {},
-      manifest: {},
-      setManifest: () => {},
       manifests: {},
       setManifests: () => {},
       csv: [],
       setCSV: () => [],
-      style: {},
-      setStyle: () => {},
-      csvFiles: [],
-      setcsvFiles: () =>  [],
       bertinTypes:  [],
       setbertinTypes: () => []
           
@@ -64,19 +50,12 @@ export const MapContext = React.createContext<MapContext>({
 
 const MapWidget = () => {
 
-  const [worldGeoJSON, setworldGeoJSON] = useState<any>(null)
-  const [manifest, setManifest] = useState<any>(null)
+  
   const [manifests, setManifests] = useState<any>(null)
   const [csv, setCSV] = useState<any>(null) 
   const [bertinTypes, setbertinTypes] = useState<any>(null) 
-  const [csvFiles, setcsvFiles] = useState<any>(null) 
-  const [style, setStyle] = useState<any>(null)
-  const [isGeoLoading, setIsGeoLoading] = useState(true);
-  const [isManifestLoading, setIsManifestLoading] = useState(true);
   const [isManifestsLoading, setIsManifestsLoading] = useState(true);
   const [isCSVLoading, setIsCSVLoading] = useState(true);
-  const [isStyleLoading, setIsStyleLoading] = useState(true);
-  const [isCSVFilesLoading, setIsCSVFilesLoading] = useState(true);
   const [isbertinTypesLoading, setIsbertinTypesLoading] = useState(true);
   
   
@@ -91,29 +70,15 @@ const MapWidget = () => {
       
       //var data = require('../../resources/manifests/choro.json')
       //console.log("data", data)
-      if(isGeoLoading) {
-          getGeoJSON().then(data => setworldGeoJSON(data))
-          setIsGeoLoading(false);   
-      }
-      else {
-        console.log("world geojson:  ", worldGeoJSON)
-        
-      }
-      if(isManifestLoading) {
-        getManifest().then(data => setManifest(data))
-        setIsManifestLoading(false);   
-      }
-      else {
-         console.log("manifest :  ", manifest)
       
-      }
       if(isManifestsLoading) {
         var data = getManifests()
         setManifests(data)
         setIsManifestsLoading(false);   
       }
       else {
-         console.log("new manifests :  ", manifests)
+         
+         console.log("new manifests :  ", manifests.bubble)
       
       }
       if(isCSVLoading) {
@@ -130,46 +95,13 @@ const MapWidget = () => {
       else {
          console.log("bertinTypes :  ", bertinTypes)    
       }
-      if(isCSVFilesLoading) {
-        getCSV().then(data =>{ setCSV(data)
-          var file = [{
-            name:"data6.csv",
-            
-            id: 1,
-            type : "csv",
-            data:  data
-          }  ]
-          console.log("csv file:  ")  
-          console.log(file)
-          setcsvFiles(file)
-          setIsCSVFilesLoading(false); 
-        
-        })  
-      }
-      else {
-         console.log("csvFiles :  ", csvFiles)
-         
-      
-      }
-      if(isStyleLoading) {
-        getStyle().then(data => setStyle(data))
-        setIsStyleLoading(false);   
-      }
-      else {
-         console.log("style :  ", style)
-      
-      }
-        
     })
     return (
       <>
         { (
           <>
-            <MapContext.Provider value={{worldGeoJSON, setworldGeoJSON, manifest,
-               setManifest, csv, setCSV, style, setStyle, csvFiles, setcsvFiles,
-               bertinTypes, setbertinTypes,
-               manifests,
-               setManifests,}}>
+            <MapContext.Provider value={{
+                csv, setCSV, bertinTypes, setbertinTypes, manifests,setManifests,}}>
               
               <Container>
                   <LeftSidebar/>
