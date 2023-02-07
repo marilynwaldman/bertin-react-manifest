@@ -23,17 +23,14 @@ export const getManifests = () => {
            var csv = require('../../resources/data/' + obj.dependencies.population.file)
            manifest.params.projection = projections[obj.projection]
            var geojson = require('../../resources/geojson/' + obj.dependencies.world.file)
-           if (obj.id != "bubble"){
+           if (obj.id == "bubble"){
+              manifest.layers[0].geojson = csv
+              manifest.layers[1].geojson = geojson
+           } else {
               var mergedJson = bertin.merge(geojson, "ISO3", csv, "id")
               manifest.layers[0].geojson = mergedJson
-           } else {
-            manifest.layers[0].geojson = csv
-            manifest.layers[1].geojson = geojson
 
            }
-           
-
-
            data[obj.id] = manifest
        })
       
