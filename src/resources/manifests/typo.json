@@ -5,6 +5,15 @@
         "type": "layer",
         "geojson": "xxx",
         "fill": {
+          "type": "typo",
+          "values": "region",
+          "pal": "Tableau10",
+          "tooltip": ["$region", "$name"],
+          "leg_title": "The Continents",
+          "leg_x": 55,
+          "leg_y": 180
+        },
+        "fill2": {
           "type": "choro",
           "values": "gdppc",
           "nbreaks": 5,

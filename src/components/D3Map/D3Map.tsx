@@ -3,10 +3,13 @@
 import React, { useState, RefObject, useEffect, useRef , useContext} from 'react';
 import './D3Map.scss';
 import styled from 'styled-components'
-//import * as d3 from 'd3';
+import * as d3 from 'd3';
 import * as d33 from 'd3-geo-projection'
 import { MapContext } from '../../widgets/MapWidget/MapWidget';
 import { merge } from 'd3';
+import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
+import files from '../../resources/data/index.json'
+
 
 
 
@@ -27,9 +30,12 @@ export const D3Map = () => {
   //const {manifest, setManifest} = useContext(MapContext) as any
   //const {style, setStyle} = useContext(MapContext) as any
   const {manifests, setManifests} = useContext(MapContext) as any
+  const {bertinType, setbertinType} = useContext(MapContext) as any
+
 
   const projections = {
-    "geoEckert3" : d33.geoEckert3()
+    "geoEckert3" : d33.geoEckert3(),
+    "mercator" : d3.geoMercator()
   }
 
 
@@ -47,26 +53,11 @@ export const D3Map = () => {
   var manifestCopy = _.cloneDeep(basicMap);
   //if(worldGeoJSON !=null && csv !=null && manifests !=null && manifest !=null && style !=null){
   if( manifests !=null ){
-    //manifestCopy  = JSON.parse(JSON.stringify(manifest)) as any
-    //console.log("d3map manifest typo: ", manifests.typo)
-    //manifestCopy = _.cloneDeep(manifest);
-    //manifestCopy.layers[0].fill.values = String(style.fill.values)
-    //manifestCopy.layers[0].fill.colors = String(style.fill.colors)
     
+    manifestCopy = _.cloneDeep(manifests[bertinType]);
     
-    //const projection = manifest.params.projection
-    //manifestCopy.params.projection = projections[projection]
-    
-    //var geojson = require('../../resources/geojson/' + manifest.layers[0].geojson + '.json')
 
-    //var xx = require('../../resources/geojson/world.json')
-
-    //var mergedJson = bertin.merge(geojson, "ISO3", csv, "id")
-    //console.log("after merge  ", mergedJson)
-    
-    //manifestCopy.layers[0].geojson = mergedJson
-
-    manifestCopy = manifests.bubble
+    manifestCopy = manifests[bertinType]
   
     
   } 

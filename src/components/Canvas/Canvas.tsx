@@ -22,7 +22,6 @@ export const Canvas: React.FC = () => {
     return (
         <CanvasContainer>    
             <D3Map />  
-            <LayerList></LayerList>
         </CanvasContainer>
     )
 }

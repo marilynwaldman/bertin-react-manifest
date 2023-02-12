@@ -1,0 +1,46 @@
+{
+    "params": { 
+      "projection" : "mercator",
+      "background": "#DDD",
+      "extent1": "usStates",
+      "margin": 30
+     },
+    "layers": [
+      
+      {
+        "type": "tiles",
+        "opacity": 1,
+        "zoomDelta": 10,
+        "style": "worldimagery",
+         "clip": "usStates"
+         
+      },
+      {
+        "geojson": "usStates",
+        "fill": "white",
+        "fillOpacity": 0,
+        "stoke": "white",
+        "tooltip": "$NAME"
+      },
+      {
+        "type": "shadow",
+        "geojson": "usStates"
+      },
+      {
+        "type": "header",
+        "text": "Tile Map of the United States",
+        "background": "white",
+        "fill": "lightblue",
+        "fontSize": 30,
+        "anchor": "center"
+      },
+      {
+        "type": "footer",
+        "text": "IX Water",
+        "fill": "#65bcdb",
+        "fontSize": 15,
+        "anchor": "middle"
+      }
+      
+    ]
+  }

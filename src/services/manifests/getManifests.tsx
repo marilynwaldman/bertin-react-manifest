@@ -10,7 +10,8 @@ const bertin = require('bertin');
 const _ = require('lodash');
 
 const projections = {
-    "geoEckert3" : d33.geoEckert3()
+    "geoEckert3" : d33.geoEckert3(),
+    "mercator" : d3.geoMercator()
   }
 
     
@@ -18,15 +19,26 @@ const projections = {
 export const getManifests = () => {
   
        var data : any= {};
+           
+          
        manifests.manifests.forEach(obj => {
-           var manifest = require('../../resources/manifests/' + obj.file)
-           var csv = require('../../resources/data/' + obj.dependencies.population.file)
-           manifest.params.projection = projections[obj.projection]
-           var geojson = require('../../resources/geojson/' + obj.dependencies.world.file)
+             var manifest = require('../../resources/manifests/' + obj.file)
+             var csv = require('../../resources/data/' + obj.dependencies.population.file)
+             manifest.params.projection = projections[obj.projection]
+             var geojson = require('../../resources/geojson/' + obj.dependencies.world.file)
+            
            if (obj.id == "bubble"){
+              manifest.params.projection = projections[obj.projection]
               manifest.layers[0].geojson = csv
               manifest.layers[1].geojson = geojson
-           } else {
+           }
+           else if  (obj.id == "simplelayer"){
+              manifest.params.projection = projections[obj.projection]
+              manifest.params.extent = geojson
+              manifest.layers[0].geojson = geojson
+           }
+            else {
+              manifest.params.projection = projections[obj.projection]
               var mergedJson = bertin.merge(geojson, "ISO3", csv, "id")
               manifest.layers[0].geojson = mergedJson
 

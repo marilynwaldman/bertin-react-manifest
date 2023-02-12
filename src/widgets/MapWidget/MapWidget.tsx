@@ -25,15 +25,15 @@ const Container = styled.div`
     `   
 
 type MapContext = {
-    
-    manifests: {}
-    setManifests: React.Dispatch<React.SetStateAction<any>>
-    csv: []
-    setCSV: React.Dispatch<React.SetStateAction<any>>
-    
-    bertinTypes: []
-    setbertinTypes: React.Dispatch<React.SetStateAction<any>>
-  
+
+  manifests: {}
+  setManifests: React.Dispatch<React.SetStateAction<any>>
+  csv: []
+  setCSV: React.Dispatch<React.SetStateAction<any>>  
+  bertinTypes: []
+  setbertinTypes: React.Dispatch<React.SetStateAction<any>>
+  bertinType: {}
+  setbertinType: React.Dispatch<React.SetStateAction<any>>  
   }
 
 export const MapContext = React.createContext<MapContext>({
@@ -42,7 +42,9 @@ export const MapContext = React.createContext<MapContext>({
       csv: [],
       setCSV: () => [],
       bertinTypes:  [],
-      setbertinTypes: () => []
+      setbertinTypes: () => [],
+      bertinType: "typo",
+      setbertinType: () => String
           
 })    
       
@@ -54,9 +56,11 @@ const MapWidget = () => {
   const [manifests, setManifests] = useState<any>(null)
   const [csv, setCSV] = useState<any>(null) 
   const [bertinTypes, setbertinTypes] = useState<any>(null) 
+  const [bertinType, setbertinType] = useState<any>(null) 
   const [isManifestsLoading, setIsManifestsLoading] = useState(true);
   const [isCSVLoading, setIsCSVLoading] = useState(true);
   const [isbertinTypesLoading, setIsbertinTypesLoading] = useState(true);
+  const [isbertinTypeLoading, setIsbertinTypeLoading] = useState(true);
   
   
   
@@ -95,13 +99,20 @@ const MapWidget = () => {
       else {
          console.log("bertinTypes :  ", bertinTypes)    
       }
+      if(isbertinTypeLoading) {
+        setbertinType("typo")
+        setIsbertinTypeLoading(false);   
+      }
+      else {
+         console.log("bertinType :  ", bertinType)    
+      }
     })
     return (
       <>
         { (
           <>
             <MapContext.Provider value={{
-                csv, setCSV, bertinTypes, setbertinTypes, manifests,setManifests,}}>
+                csv, setCSV, bertinTypes, setbertinTypes, manifests,setManifests, bertinType, setbertinType}}>
               
               <Container>
                   <LeftSidebar/>

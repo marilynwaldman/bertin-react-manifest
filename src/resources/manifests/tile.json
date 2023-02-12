@@ -1,45 +1,19 @@
-{
-    "params": { "projection": "geoEckert3" },
-    "layers": [
-      {
-        "type": "layer",
-        "geojson": "xxx",
-        "fill": {
-          "type": "choro",
-          "values": "gdppc",
-          "nbreaks": 5,
-          "method": "quantile",
-          "colors": "RdYlBu",
-          "leg_round": -2.0,
-          "leg_title": "GDP per in dollars",
-          "leg_x": 100,
-          "leg_y": 200
-        },
-        "tooltip": ["$name", "$gdppc"]
-      },
-      { "type": "graticule" },
-      { "type": "outline" },
-      { "type": "header",
-        "text": "Typology: World GDP",
-        "fill": "#65bcdb",
-        "fontSize": 25,
-        "anchor": "middle"
-      },
-      {
-        "type": "header",
-        "text": "Tile Map",
-        "background": "white",
-        "fill": "lightblue",
-        "fontSize": 30,
-        "anchor": "center"
-      },
-      {
-        "type": "footer",
-        "text": "IX Water",
-        "fill": "#65bcdb",
-        "fontSize": 15,
-        "anchor": "middle"
-      }
-      
-    ]
+{ "params": {  "margin": 10,
+               "clip" : true,
+               "extent": "geojson"},
+  "layers": [
+    {
+      "type": "layer",
+      "geojson": "kern_county",
+      "fillOpacity": 0.001,
+      "strokeWidth": 1.0
+    },
+    {
+      "type": "tiles",
+      "style": "worldimagery",
+      "clip" : "geojson",
+      "zoomlevel" : 5
+    }
+    
+  ]
   }

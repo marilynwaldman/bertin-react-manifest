@@ -1,35 +1,17 @@
 {
-    "params": { "projection": "geoEckert3" },
+    "params": { "projection": "mercator",  "margin": 10 },
     "layers": [
       {
         "type": "layer",
-        "geojson": "xxx",
-        "fill": {
-          "type": "choro",
-          "values": "gdppc",
-          "nbreaks": 5,
-          "method": "quantile",
-          "colors": "RdYlBu",
-          "leg_round": -2.0,
-          "leg_title": "GDP per in dollars",
-          "leg_x": 100,
-          "leg_y": 200
-        },
-        "tooltip": ["$name", "$gdppc"]
-      },
-      { "type": "graticule" },
-      { "type": "outline" },
-      { "type": "header",
-        "text": "Typology: World GDP",
-        "fill": "#65bcdb",
-        "fontSize": 25,
-        "anchor": "middle"
+        "geojson": "world",
+        "fill": "#e6acdf",
+        "strokeWidth": 1.0
       },
       {
         "type": "header",
-        "text": "Simple Layer  Map",
+        "text": "Simple Layer Map",
         "background": "white",
-        "fill": "lightblue",
+        "fill": "black",
         "fontSize": 30,
         "anchor": "middle"
       },

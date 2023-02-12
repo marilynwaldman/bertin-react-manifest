@@ -13,6 +13,7 @@ import { Avatar, ListItemText } from '@material-ui/core';
 
 export default function BertinList() {
   const {bertinTypes} = useContext(MapContext) as any
+  const {bertinType, setbertinType} = useContext(MapContext) as any
   console.log("in bertinlist")
   console.log(bertinTypes)
 
@@ -20,7 +21,9 @@ export default function BertinList() {
   if(bertinTypes !=null) {
     
     const listItems = bertinTypes.map((item: any, index: number) => 
-         <ListItem key = {item.index} button onClick={() => console.log("clicked ", index)}>
+         <ListItem key = {item.index} button onClick={() => {
+                                 console.log("clicked ", item.type)
+                                 setbertinType(item.type)}}>
             <ListItemAvatar >
                 <Avatar  style={{borderRadius: 0.00, height: '80px', width: '100px' }} alt={item.name} src={`./img/${item.image}`}>
                 </Avatar>    
