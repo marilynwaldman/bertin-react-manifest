@@ -1,0 +1,10 @@
+﻿image,name,url
+bubble.png ,Bubble,../public/img/bubble.png 
+bubblechoro.png ,Choro Bubble,../public/img/bubblechoro.png 
+bubbletypo.png ,Typo Bubble,../public/img/bubbletypo.png 
+simple.png,Simple,../public/img/simple.png
+choro.png,Choro,../public/img/choro.png
+tile.png,Tile,../public/img/tile.png
+geoutline.png,Outline,../public/img/geoutline.png
+typo.png,Typo,../public/img/typo.png
+regularbubble.png,Regular Bubble,../public/img/regularbubble.png

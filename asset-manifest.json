@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/marilynwaldman/bertin-react-manifest/static/css/main.eeb4ae37.css",
+    "main.js": "/marilynwaldman/bertin-react-manifest/static/js/main.0697421c.js",
+    "static/js/787.a643d41e.chunk.js": "/marilynwaldman/bertin-react-manifest/static/js/787.a643d41e.chunk.js",
+    "static/media/usCities.csv": "/marilynwaldman/bertin-react-manifest/static/media/usCities.5e476d7c4012652434b8.csv",
+    "static/media/population.csv": "/marilynwaldman/bertin-react-manifest/static/media/population.900db996fa0972393abd.csv",
+    "index.html": "/marilynwaldman/bertin-react-manifest/index.html",
+    "main.eeb4ae37.css.map": "/marilynwaldman/bertin-react-manifest/static/css/main.eeb4ae37.css.map",
+    "main.0697421c.js.map": "/marilynwaldman/bertin-react-manifest/static/js/main.0697421c.js.map",
+    "787.a643d41e.chunk.js.map": "/marilynwaldman/bertin-react-manifest/static/js/787.a643d41e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eeb4ae37.css",
+    "static/js/main.0697421c.js"
+  ]
+}
