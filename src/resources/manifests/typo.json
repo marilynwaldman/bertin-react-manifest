@@ -13,18 +13,8 @@
           "leg_x": 55,
           "leg_y": 180
         },
-        "fill2": {
-          "type": "choro",
-          "values": "gdppc",
-          "nbreaks": 5,
-          "method": "quantile",
-          "colors": "RdYlBu",
-          "leg_round": -2.0,
-          "leg_title": "GDP per in dollars",
-          "leg_x": 100,
-          "leg_y": 200
-        },
-        "tooltip": ["$name", "$gdppc"]
+       
+        "tooltip": ["$name", "$gdppc", "$region"]
       },
       { "type": "graticule" },
       { "type": "outline" },

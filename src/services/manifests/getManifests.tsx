@@ -2,7 +2,6 @@
 
 import * as d33 from 'd3-geo-projection'
 import * as d3 from 'd3' 
-import { resolve } from 'node:path/win32';
 import manifests from '../../resources/manifests/index.json'
 import { merge } from 'd3';
 
@@ -22,17 +21,19 @@ export const getManifests = () => {
            
           
        manifests.manifests.forEach(obj => {
+             
              var manifest = require('../../resources/manifests/' + obj.file)
              var csv = require('../../resources/data/' + obj.dependencies.population.file)
              manifest.params.projection = projections[obj.projection]
              var geojson = require('../../resources/geojson/' + obj.dependencies.world.file)
             
-           if (obj.id == "bubble"){
+
+           if (obj.id === "bubble"){
               manifest.params.projection = projections[obj.projection]
               manifest.layers[0].geojson = csv
               manifest.layers[1].geojson = geojson
            }
-           else if  (obj.id == "simplelayer"){
+           else if  (obj.id === "simplelayer"){
               manifest.params.projection = projections[obj.projection]
               manifest.params.extent = geojson
               manifest.layers[0].geojson = geojson

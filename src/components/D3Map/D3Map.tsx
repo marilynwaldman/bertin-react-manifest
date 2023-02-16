@@ -8,7 +8,6 @@ import * as d33 from 'd3-geo-projection'
 import { MapContext } from '../../widgets/MapWidget/MapWidget';
 import { merge } from 'd3';
 import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
-import files from '../../resources/data/index.json'
 
 
 
