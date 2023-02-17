@@ -2,6 +2,7 @@
   "name": "bertin-d3-3",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/marilynwaldman/bertin-react-manifest",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@material-ui/data-grid": "^4.0.0-alpha.37",
@@ -24,6 +25,7 @@
     "d3-geo": "^3.0.1",
     "d3-geo-projection": "^4.0.0",
     "geojson": "^0.5.0",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-color": "^2.19.3",
     "react-csv": "^2.2.2",
@@ -40,6 +42,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

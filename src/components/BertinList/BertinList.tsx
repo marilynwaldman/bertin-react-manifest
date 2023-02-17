@@ -14,39 +14,46 @@ import { Avatar, ListItemText } from '@material-ui/core';
 export default function BertinList() {
   const {bertinTypes} = useContext(MapContext) as any
   const {bertinType, setbertinType} = useContext(MapContext) as any
+  const {manifests, setManifests} = useContext(MapContext) as any
+  
   console.log("in bertinlist")
   console.log(bertinTypes)
 
-
-  if(bertinTypes !=null) {
-    
-    const listItems = bertinTypes.map((item: any, index: number) => 
-         <ListItem key = {item.index} button onClick={() => {
-                                 console.log("clicked ", item.type)
-                                 setbertinType(item.type)}}>
-            <ListItemAvatar >
-                <Avatar  style={{borderRadius: 0.00, height: '80px', width: '100px' }} alt={item.name} src={`./img/${item.image}`}>
-                </Avatar>    
-               
-            </ListItemAvatar>
-            <ListItemText>{item.name}</ListItemText>
-         </ListItem>
-    
+  if(manifests !=null) {
+      Object.keys(manifests).forEach(function(key, index) {
+         console.log(manifests[key])
+      });
+      
+      var mylist:any = []
+      Object.keys(manifests).forEach(function(key, index) {
+        var myobj:any = {"type" : manifests[key].id,
+                         "thumbnail" : manifests[key].thumbnail}
+        mylist.push({"type" : manifests[key].id,
+                     "thumbnail" : manifests[key].thumbnail,
+                     "name" : manifests[key].name})
+     });
+     console.log("mylist ", mylist)
+     const listItems2 = mylist.map((item: any, index: number) => 
+     <ListItem key = {item.index} button onClick={() => {
+                             console.log("clicked ", item.type)
+                             setbertinType(item.type)}}>
+        <ListItemAvatar >
+            <Avatar  style={{borderRadius: 0.00, height: '80px', width: '100px' }} alt={item.name} src={process.env.PUBLIC_URL + `/img/${item.thumbnail}`}>
+            </Avatar>    
            
-           
-   
-    )
+        </ListItemAvatar>
+        <ListItemText>{item.name}</ListItemText>
+     </ListItem>)
+     return(
+          <List  > 
+            {listItems2}
+          </List>    
+      )
+    }   
+    else {
+       return <p> loading</p>
+    }     
 
-    return(
-        <List  > 
-          {listItems}
-       </List>    
-    )
-  }   
-  else {
-    return <p> loading</p>
-  }       
-
-    
+  }
   
-}
+

@@ -7,6 +7,7 @@ export const getBertinTypes = () =>
       d3
         .csv('/data/bertin_types.csv')
     .then(function results(data) {
+      console.log("In getBertinTypes Service", data)
       return resolve((data as unknown) as any[])
     })
 )

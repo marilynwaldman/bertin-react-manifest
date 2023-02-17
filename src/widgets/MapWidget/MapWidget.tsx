@@ -94,6 +94,7 @@ const MapWidget = () => {
       }
       if(isbertinTypesLoading) {
         getBertinTypes().then(data => setbertinTypes(data))
+        console.log("Bertin Types for lsit ", bertinTypes)
         setIsbertinTypesLoading(false);   
       }
       else {

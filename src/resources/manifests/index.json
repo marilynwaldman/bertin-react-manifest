@@ -8,6 +8,8 @@
     "manifests" : [
         {   "id": "choro",
             "file": "choro.json",
+            "thumbnail" : "choro.png",
+            "name" : "Choropleth",
             "projection": "geoEckert3",
             "dependencies" :  {
                 "world" :  {             
@@ -24,6 +26,8 @@
         {   "id": "typo",
             "file": "typo.json",
             "projection": "geoEckert3",
+            "thumbnail" : "typo.png",
+            "name" : "Typological Map",
             "dependencies" :  {
                 "worldfile" : "world.json",
                 "world" :  {             
@@ -39,6 +43,8 @@
         {   "id": "simplelayer",
             "file": "simplelayer.json",
             "projection": "mercator",
+            "thumbnail" : "simple.png",
+            "name" : "Simple Layers",
             "dependencies" :  {
                 "world" :  {             
                       "file" : "states.json",
@@ -54,6 +60,8 @@
         {   "id": "tile",
             "file": "tile.json",
             "projection": "mercator",
+            "thumbnail" : "tile.png",
+            "name" : "Tile Map",
             "dependencies" :  {
                 "world" :  {             
                       "file" : "states.json",
@@ -69,6 +77,8 @@
         {   "id": "bubble",
             "file": "bubble.json",
             "projection": "geoEckert3",
+            "thumbnail" : "bubble.png",
+            "name" : "Bubble Map",
             "dependencies" :  {
                 "world" :  {             
                       "file" : "world.json",

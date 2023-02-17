@@ -26,7 +26,9 @@ export const getManifests = () => {
              var csv = require('../../resources/data/' + obj.dependencies.population.file)
              manifest.params.projection = projections[obj.projection]
              var geojson = require('../../resources/geojson/' + obj.dependencies.world.file)
-            
+             manifest.thumbnail = obj.thumbnail
+             manifest.id = obj.id
+             manifest.name = obj.name
 
            if (obj.id === "bubble"){
               manifest.params.projection = projections[obj.projection]
@@ -46,7 +48,7 @@ export const getManifests = () => {
            }
            data[obj.id] = manifest
        })
-      
+       console.log("in getManifests ", data)
        return data
        
   
