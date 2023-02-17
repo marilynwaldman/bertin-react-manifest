@@ -5,12 +5,14 @@ export const Sidebar = styled.div`
     height: 100%;
     background-color: 'white';
     padding: 20px;
+    flex wrap;
 `
 //background-color: rgba(70, 70, 70, 1);
 export const Title = styled.div`
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
+    flex wrap;
     
     
 `

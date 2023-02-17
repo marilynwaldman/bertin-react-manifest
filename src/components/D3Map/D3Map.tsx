@@ -22,8 +22,7 @@ height: 100%;
 background-color: 'white';
 padding: 20px;
 position: relative;
-flex 1;
-            
+flex 1;          
 `
 
 
