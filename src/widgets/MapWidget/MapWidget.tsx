@@ -4,17 +4,10 @@ import { RightSidebar } from '../../components/RightSidebar/RightSidebar';
 import { useEffect } from 'react';
 import { GlobalStyles } from '../../components/ui/ui';
 import styled from 'styled-components';
-import { getGeoJSON } from '../../services/geojson/getGeoJSON';
-import { getManifest } from '../../services/manifest/getManifest';
 import { getManifests } from '../../services/manifests/getManifests';
-import { getCSV } from '../../services/csv/getCSV';
-import { getBertinTypes } from '../../services/bertin_types/getBertinTypes';
-import { getStyle } from '../../services/style/getStyle';
 import {  useState } from "react";
-import { Feature, Geometry } from 'geojson'
-import { csvFile } from '../../model/csvfile';
 import React from 'react';
-import { Typography } from '@material-ui/core';
+
 
 
 const Container = styled.div`

@@ -17,8 +17,13 @@ const bertin = require('bertin');
 const _ = require('lodash');
 
 const CanvasContainer = styled.div`
-    flex: 1;
-    position: relative;        
+width: 650px;
+height: 100%;
+background-color: 'white';
+padding: 20px;
+position: relative;
+flex 1;
+            
 `
 
 
