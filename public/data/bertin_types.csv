@@ -1,5 +1,0 @@
-﻿image,name,url,type
-simple.png,Simple Layer,./public/img/simple.png,simplelayer
-choro.png,Choropleth,./public/img/choro.png,choro
-typo.png,Typo,./public/img/typo.png,typo
-bubble.png ,Bubble,./img/bubble.png,bubble
