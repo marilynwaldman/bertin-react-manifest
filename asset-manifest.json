@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/bertin-react-manifest/static/css/main.eeb4ae37.css",
-    "main.js": "/bertin-react-manifest/static/js/main.a9421130.js",
+    "main.js": "/bertin-react-manifest/static/js/main.484c3dfe.js",
     "static/js/787.a643d41e.chunk.js": "/bertin-react-manifest/static/js/787.a643d41e.chunk.js",
     "static/media/usCities.csv": "/bertin-react-manifest/static/media/usCities.5e476d7c4012652434b8.csv",
     "static/media/population.csv": "/bertin-react-manifest/static/media/population.900db996fa0972393abd.csv",
     "index.html": "/bertin-react-manifest/index.html",
     "main.eeb4ae37.css.map": "/bertin-react-manifest/static/css/main.eeb4ae37.css.map",
-    "main.a9421130.js.map": "/bertin-react-manifest/static/js/main.a9421130.js.map",
+    "main.484c3dfe.js.map": "/bertin-react-manifest/static/js/main.484c3dfe.js.map",
     "787.a643d41e.chunk.js.map": "/bertin-react-manifest/static/js/787.a643d41e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eeb4ae37.css",
-    "static/js/main.a9421130.js"
+    "static/js/main.484c3dfe.js"
   ]
 }
