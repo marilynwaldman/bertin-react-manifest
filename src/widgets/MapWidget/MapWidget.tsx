@@ -28,10 +28,6 @@ type MapContext = {
 
   manifests: {}
   setManifests: React.Dispatch<React.SetStateAction<any>>
-  csv: []
-  setCSV: React.Dispatch<React.SetStateAction<any>>  
-  bertinTypes: []
-  setbertinTypes: React.Dispatch<React.SetStateAction<any>>
   bertinType: {}
   setbertinType: React.Dispatch<React.SetStateAction<any>>  
   }
@@ -39,13 +35,8 @@ type MapContext = {
 export const MapContext = React.createContext<MapContext>({
       manifests: {},
       setManifests: () => {},
-      csv: [],
-      setCSV: () => [],
-      bertinTypes:  [],
-      setbertinTypes: () => [],
       bertinType: "typo",
       setbertinType: () => String
-          
 })    
       
 
@@ -54,12 +45,12 @@ const MapWidget = () => {
 
   
   const [manifests, setManifests] = useState<any>(null)
-  const [csv, setCSV] = useState<any>(null) 
-  const [bertinTypes, setbertinTypes] = useState<any>(null) 
+  //const [csv, setCSV] = useState<any>(null) 
+  //const [bertinTypes, setbertinTypes] = useState<any>(null) 
   const [bertinType, setbertinType] = useState<any>(null) 
   const [isManifestsLoading, setIsManifestsLoading] = useState(true);
-  const [isCSVLoading, setIsCSVLoading] = useState(true);
-  const [isbertinTypesLoading, setIsbertinTypesLoading] = useState(true);
+  //const [isCSVLoading, setIsCSVLoading] = useState(true);
+  //const [isbertinTypesLoading, setIsbertinTypesLoading] = useState(true);
   const [isbertinTypeLoading, setIsbertinTypeLoading] = useState(true);
   
   
@@ -85,21 +76,21 @@ const MapWidget = () => {
          console.log("new manifests :  ", manifests.bubble)
       
       }
-      if(isCSVLoading) {
-        getCSV().then(data => setCSV(data))
-        setIsCSVLoading(false);   
-      }
-      else {
-         console.log("csv :  ", csv)    
-      }
-      if(isbertinTypesLoading) {
-        getBertinTypes().then(data => setbertinTypes(data))
-        console.log("Bertin Types for lsit ", bertinTypes)
-        setIsbertinTypesLoading(false);   
-      }
-      else {
-         console.log("bertinTypes :  ", bertinTypes)    
-      }
+      //if(isCSVLoading) {
+      //  getCSV().then(data => setCSV(data))
+      //  setIsCSVLoading(false);   
+      //}
+      //else {
+      //   console.log("csv :  ", csv)    
+      //}
+      //if(isbertinTypesLoading) {
+      //  getBertinTypes().then(data => setbertinTypes(data))
+      //  console.log("Bertin Types for lsit ", bertinTypes)
+      //  setIsbertinTypesLoading(false);   
+      //}
+      //else {
+      //   console.log("bertinTypes :  ", bertinTypes)    
+      //}
       if(isbertinTypeLoading) {
         setbertinType("typo")
         setIsbertinTypeLoading(false);   
@@ -112,8 +103,7 @@ const MapWidget = () => {
       <>
         { (
           <>
-            <MapContext.Provider value={{
-                csv, setCSV, bertinTypes, setbertinTypes, manifests,setManifests, bertinType, setbertinType}}>
+            <MapContext.Provider value={{ manifests,setManifests, bertinType, setbertinType}}>
               
               <Container>
                   <LeftSidebar/>

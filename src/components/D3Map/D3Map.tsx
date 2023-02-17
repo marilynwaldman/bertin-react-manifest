@@ -24,10 +24,7 @@ const CanvasContainer = styled.div`
 
 export const D3Map = () => {
 
-  //const {csv, setCSV} = useContext(MapContext) as any
-  //const {worldGeoJSON, setworldGeoJSON} = useContext(MapContext) as any
-  //const {manifest, setManifest} = useContext(MapContext) as any
-  //const {style, setStyle} = useContext(MapContext) as any
+  
   const {manifests, setManifests} = useContext(MapContext) as any
   const {bertinType, setbertinType} = useContext(MapContext) as any
 
